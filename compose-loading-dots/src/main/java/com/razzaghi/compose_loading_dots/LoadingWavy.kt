@@ -30,7 +30,7 @@ fun LoadingWavy(
     dotsCount: Int = 3,
     dotsSize: Dp = 15.dp,
     dotsColor: Color = MaterialTheme.colors.primary,
-    duration: Int = 500
+    duration: Int = 400
 ) {
 
     Row(
@@ -39,8 +39,8 @@ fun LoadingWavy(
 
         for (index in 1..dotsCount) {
 
-            val startValue = dotsSize.value / 6
-            val endValue = -dotsSize.value / 6
+            val startValue = dotsSize.value / 2
+            val endValue = -dotsSize.value / 2
 
             val yPosition = remember { Animatable(startValue) }
 
@@ -59,7 +59,11 @@ fun LoadingWavy(
                 }
             }
 
-            Dot(size = dotsSize, color = dotsColor, yOffset = { yPosition.value })
+            Dot(
+                size = dotsSize,
+                color = dotsColor,
+                yOffset = { yPosition.value }
+            )
         }
     }
 
