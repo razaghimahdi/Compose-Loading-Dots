@@ -54,5 +54,5 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-alpha02'
     implementation 'androidx.activity:activity-compose:1.6.0-alpha03'
 
-    implementation project(':compose-loading-dots')
+    implementation 'com.github.razaghimahdi:Compose-Loading-Dots:Tag'
 }
