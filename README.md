@@ -20,5 +20,5 @@ https://jitpack.io/#razaghimahdi/Compose-Loading-Dots
 
 Done !!!
 
-<video src="https://github.com/razaghimahdi/Compose-Loading-Dots/blob/master/screenshots/record.mp4"  width="300"> 
+<video src="https://github.com/razaghimahdi/Compose-Loading-Dots/blob/master/screenshots/record.mp4"  width="300"></video> 
 
