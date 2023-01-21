@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -16,7 +17,8 @@ import androidx.compose.ui.unit.dp
 fun Dot(
     size: Dp = 25.dp,
     color: Color = MaterialTheme.colors.primary,
-    yOffset: ()->Float = { 0F }
+    yOffset: () -> Float = { 0F },
+    alpha: () -> Float = { 1F }
 ) {
 
     Canvas(
@@ -24,6 +26,7 @@ fun Dot(
             .padding(horizontal = 3.dp)
             .size(size = size)
             .offset(y = yOffset().dp)
+            .alpha(alpha())
     ) {
         drawCircle(
             color = color,
