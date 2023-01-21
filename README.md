@@ -14,9 +14,8 @@ simple Library to have Progresses dots loading by compose, this is compose versi
 
 # Step 2. Add the dependency
 	dependencies {
-	        implementation 'com.github.razaghimahdi:Compose-Loading-Dots:Tag'
-	}
-	Current Ver:"1.0"
+	        implementation 'com.github.razaghimahdi:Compose-Loading-Dots:1.0.0'
+	} 
 
 # Step 3. How to use
 ```kotlin
