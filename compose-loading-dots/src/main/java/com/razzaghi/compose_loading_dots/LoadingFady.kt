@@ -1,22 +1,16 @@
-package com.razzaghi.composeloaddots.components
+package com.razzaghi.compose_loading_dots
 
-import android.util.Log
+import androidx.compose.animation.Animatable
 import androidx.compose.animation.core.*
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.layout.Row
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.razzaghi.composeloaddots.ui.theme.ComposeLoadDotsTheme
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -27,17 +21,19 @@ import kotlinx.coroutines.launch
 /**
  * dotsCount: by define that, we choice how many dots we gonna show
  * dotsSize: by define that, we choice what size our dots gonna have
- * dotsColor: by define that, we choice what color our dots gonna have
+ * selectedDotsColor: by define that, we choice what selected color our dots gonna have
+ * unSelectedDotsColor: by define that, we choice what un selected color our dots gonna have
  * */
 
 
 @Composable
-fun LoadingWavy(
+fun LoadingFady(
     modifier: Modifier = Modifier,
     dotsCount: Int = 3,
     dotsSize: Dp = 15.dp,
-    dotsColor: Color = MaterialTheme.colors.primary,
-    duration: Int = 500
+    selectedDotsColor: Color = MaterialTheme.colors.primary,
+    unSelectedDotsColor: Color = MaterialTheme.colors.onPrimary,
+    duration: Int = 750
 ) {
 
     Row(
@@ -46,16 +42,16 @@ fun LoadingWavy(
 
         for (index in 1..dotsCount) {
 
-            val startValue = dotsSize.value / 6
-            val endValue = -dotsSize.value / 6
+            val startValue = selectedDotsColor
+            val endValue = unSelectedDotsColor
 
-            val yPosition = remember { Animatable(startValue) }
+            val animColor = remember { Animatable(startValue) }
 
-            LaunchedEffect(yPosition) {
+            LaunchedEffect(animColor) {
                 delay(((duration / dotsCount) * index).toLong())
                 launch {
-                    yPosition.animateTo(
-                        endValue  ,
+                    animColor.animateTo(
+                      endValue  ,
                         animationSpec = infiniteRepeatable(
                             animation = tween(
                                 durationMillis = duration,
@@ -66,17 +62,9 @@ fun LoadingWavy(
                 }
             }
 
-            Dot(size = dotsSize, color = dotsColor, yOffset = { yPosition.value })
+            Dot(size = dotsSize, color = animColor.value)
         }
     }
 
 
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultLoadingWavyPreview() {
-    ComposeLoadDotsTheme {
-        LoadingWavy()
-    }
 }

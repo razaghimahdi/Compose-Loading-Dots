@@ -1,4 +1,4 @@
-package com.razzaghi.composeloaddots.ui.theme
+package com.razzaghi.composeloadingdots.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
