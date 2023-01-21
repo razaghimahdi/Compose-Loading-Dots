@@ -1,6 +1,5 @@
 package com.razzaghi.compose_loading_dots
 
-import androidx.compose.animation.Animatable
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.MaterialTheme
@@ -21,8 +20,7 @@ import kotlinx.coroutines.launch
 /**
  * dotsCount: by define that, we choice how many dots we gonna show
  * dotsSize: by define that, we choice what size our dots gonna have
- * selectedDotsColor: by define that, we choice what selected color our dots gonna have
- * unSelectedDotsColor: by define that, we choice what un selected color our dots gonna have
+ * dotsColor: by define that, we choice what color our dots gonna have
  * */
 
 
@@ -31,8 +29,7 @@ fun LoadingFady(
     modifier: Modifier = Modifier,
     dotsCount: Int = 3,
     dotsSize: Dp = 15.dp,
-    selectedDotsColor: Color = MaterialTheme.colors.primary,
-    unSelectedDotsColor: Color = MaterialTheme.colors.onPrimary,
+    dotsColor: Color = MaterialTheme.colors.primary,
     duration: Int = 750
 ) {
 
@@ -42,15 +39,15 @@ fun LoadingFady(
 
         for (index in 1..dotsCount) {
 
-            val startValue = selectedDotsColor
-            val endValue = unSelectedDotsColor
+            val startValue = 1.0f
+            val endValue = 0.2f
 
-            val animColor = remember { Animatable(startValue) }
+            val animAlpha = remember { Animatable(startValue) }
 
-            LaunchedEffect(animColor) {
+            LaunchedEffect(animAlpha) {
                 delay(((duration / dotsCount) * index).toLong())
                 launch {
-                    animColor.animateTo(
+                    animAlpha.animateTo(
                       endValue  ,
                         animationSpec = infiniteRepeatable(
                             animation = tween(
@@ -62,7 +59,7 @@ fun LoadingFady(
                 }
             }
 
-            Dot(size = dotsSize, color = animColor.value)
+            Dot(size = dotsSize, color = dotsColor, alpha = { animAlpha.value })
         }
     }
 
