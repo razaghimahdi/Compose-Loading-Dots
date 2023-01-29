@@ -19,7 +19,7 @@ this in XML then try[Android-Loading-Dots](https://github.com/razaghimahdi/Andro
 ## Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.razaghimahdi:Compose-Loading-Dots:1.2.0'
+	        implementation 'com.github.razaghimahdi:Compose-Loading-Dots:1.2.1'
 	} 
 
 ## Step 3. How to use
@@ -50,26 +50,26 @@ LoadingCircleFady(controller = rememberLoadingCircleFadyController)
 
 ```Kotlin
         val rememberDotsLoadingWavyController = rememberDotsLoadingController()
-LoadingWavy(
-    controller = rememberDotsLoadingWavyController,
-    modifier = Modifier.padding(vertical = 8.dp),
-    dotsCount = 3,
-    dotsColor = Color.Red,
-    dotsSize = 25.dp,
-    duration = 300,
-    easing = LinearEasing
-)
+        LoadingWavy(
+            controller = rememberDotsLoadingWavyController,
+            modifier = Modifier.padding(vertical = 8.dp),
+            dotsCount = 3,
+            dotsColor = Color.Red,
+            dotsSize = 25.dp,
+            duration = 300,
+            easing = LinearEasing
+        )
 ```
 
 OR
 
 ```Kotlin
         val rememberDotsLoadingWavyController = rememberDotsLoadingController()
-rememberDotsLoadingWavyController.updateSelectedDotsCount(3)
-rememberDotsLoadingWavyController.updateSelectedDotsDuration(300)
-rememberDotsLoadingWavyController.updateSelectedEasing(LinearEasing)
-rememberDotsLoadingWavyController.updateSelectedDotsColor(Color.Red)
-rememberDotsLoadingWavyController.updateSelectedDotsSize(25.dp)
+        rememberDotsLoadingWavyController.updateSelectedDotsCount(3)
+        rememberDotsLoadingWavyController.updateSelectedDotsDuration(300)
+        rememberDotsLoadingWavyController.updateSelectedEasing(LinearEasing)
+        rememberDotsLoadingWavyController.updateSelectedDotsColor(Color.Red)
+        rememberDotsLoadingWavyController.updateSelectedDotsSize(25.dp)
 
 LoadingWavy(
     controller = rememberDotsLoadingWavyController,
