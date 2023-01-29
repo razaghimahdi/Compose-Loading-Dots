@@ -1,10 +1,14 @@
 # Compose-Loading-Dots
-simple Library to have Progresses dots loading by compose, this is compose version [Android-Loading-Dots](https://github.com/razaghimahdi/Android-Loading-Dots)
+
+A library which allows you to have some beautiful loading with dots by Jetpack Compose, If you need
+this in XML then try[Android-Loading-Dots](https://github.com/razaghimahdi/Android-Loading-Dots)
+
 ## Developed by Mahdi Razzaghi Ghaleh
 
 [![](https://jitpack.io/v/razaghimahdi/Compose-Loading-Dots.svg)](https://jitpack.io/#razaghimahdi/Compose-Loading-Dots)
 
-# Step1. Add it in your root build.gradle at the end of repositories:
+## Step1. Add it in your root build.gradle at the end of repositories:
+
 	allprojects {
 		repositories {
 			...
@@ -12,24 +16,69 @@ simple Library to have Progresses dots loading by compose, this is compose versi
 		}
 	}
 
-# Step 2. Add the dependency
+## Step 2. Add the dependency
+
 	dependencies {
-	        implementation 'com.github.razaghimahdi:Compose-Loading-Dots:1.0.1'
+	        implementation 'com.github.razaghimahdi:Compose-Loading-Dots:1.2.0'
 	} 
 
-# Step 3. How to use
+## Step 3. How to use
+
 ```kotlin
+val rememberDotsLoadingWavyController = rememberDotsLoadingController()
+val rememberDotsLoadingFadyController = rememberDotsLoadingController()
+val rememberDotsLoadingBiggyController = rememberDotsLoadingController()
+val rememberLoadingScalyController = rememberDotsLoadingController()
+val rememberLoadingDancingController = rememberDotsLoadingController()
+val rememberLoadingCircleFadyController = rememberDotsLoadingController()
 
-        LoadingWavy(modifier = Modifier.padding(vertical = 8.dp))
 
-        LoadingFady(modifier = Modifier.padding(vertical = 8.dp))
+LoadingWavy(controller = rememberDotsLoadingWavyController)
 
-        LoadingBiggy(modifier = Modifier.padding(vertical = 8.dp))
+LoadingFady(controller = rememberDotsLoadingFadyController)
+
+LoadingBiggy(controller = rememberDotsLoadingBiggyController)
+
+LoadingScaly(controller = rememberLoadingScalyController)
+
+LoadingDancing(controller = rememberLoadingDancingController)
+
+LoadingCircleFady(controller = rememberLoadingCircleFadyController)
+```
+
+## Step 4. How to initial
+
+```Kotlin
+        val rememberDotsLoadingWavyController = rememberDotsLoadingController()
+LoadingWavy(
+    controller = rememberDotsLoadingWavyController,
+    modifier = Modifier.padding(vertical = 8.dp),
+    dotsCount = 3,
+    dotsColor = Color.Red,
+    dotsSize = 25.dp,
+    duration = 300,
+    easing = LinearEasing
+)
+```
+
+OR
+
+```Kotlin
+        val rememberDotsLoadingWavyController = rememberDotsLoadingController()
+rememberDotsLoadingWavyController.updateSelectedDotsCount(3)
+rememberDotsLoadingWavyController.updateSelectedDotsDuration(300)
+rememberDotsLoadingWavyController.updateSelectedEasing(LinearEasing)
+rememberDotsLoadingWavyController.updateSelectedDotsColor(Color.Red)
+rememberDotsLoadingWavyController.updateSelectedDotsSize(25.dp)
+
+LoadingWavy(
+    controller = rememberDotsLoadingWavyController,
+    modifier = Modifier.padding(vertical = 8.dp)
+)
 
 ```
 
 Done !!!
-
 
 https://user-images.githubusercontent.com/61207818/213859573-a715bd39-1167-49ea-9a9d-a6e5f5b815dd.mp4
 
