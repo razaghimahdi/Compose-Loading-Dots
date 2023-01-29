@@ -19,7 +19,7 @@ this in XML then try[Android-Loading-Dots](https://github.com/razaghimahdi/Andro
 ## Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.razaghimahdi:Compose-Loading-Dots:1.2.2'
+	        implementation 'com.github.razaghimahdi:Compose-Loading-Dots:1.2.3'
 	} 
 
 ## Step 3. How to use
