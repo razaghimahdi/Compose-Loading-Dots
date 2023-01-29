@@ -1,7 +1,9 @@
 # Compose Loading Dots
 
-A library which allows you to have some beautiful loading with dots by **Jetpack Compose**, If you need
-this in XML then try [Android-Loading-Dots](https://github.com/razaghimahdi/Android-Loading-Dots).
+A library which allows you to have some beautiful loading with dots by **Jetpack Compose**.
+
+> If you need this in XML then try [Android-Loading-Dots](https://github.com/razaghimahdi/Android-Loading-Dots).
+
 
 [![Compose Loading Dots](https://jitpack.io/v/razaghimahdi/Compose-Loading-Dots.svg)](https://jitpack.io/#razaghimahdi/Compose-Loading-Dots)
 
