@@ -7,7 +7,7 @@ A library which allows you to have some beautiful loading with dots by **Jetpack
 
 [![Compose Loading Dots](https://jitpack.io/v/razaghimahdi/Compose-Loading-Dots.svg)](https://jitpack.io/#razaghimahdi/Compose-Loading-Dots)
 
-## Step1. Add it in your root build.gradle at the end of repositories:
+## Step1. Add it in your project-level build.gradle or settings.gradle file, add JitPack repository:
 
 	allprojects {
 		repositories {
