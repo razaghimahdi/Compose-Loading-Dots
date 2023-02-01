@@ -71,10 +71,7 @@ rememberDotsLoadingWavyController.updateSelectedEasing(LinearEasing)
 rememberDotsLoadingWavyController.updateSelectedDotsColor(Color.Red)
 rememberDotsLoadingWavyController.updateSelectedDotsSize(25.dp)
 
-LoadingWavy(
-    controller = rememberDotsLoadingWavyController,
-    modifier = Modifier.padding(vertical = 8.dp)
-)
+LoadingWavy(controller = rememberDotsLoadingWavyController)
 ```
 
 https://user-images.githubusercontent.com/61207818/215316569-fdb16d2f-1f49-4c37-a3af-d940cdf2cd1b.mp4
