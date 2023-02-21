@@ -7,7 +7,7 @@ A library which allows you to have some beautiful loading with dots by **Jetpack
 
 [![Compose Loading Dots](https://jitpack.io/v/razaghimahdi/Compose-Loading-Dots.svg)](https://jitpack.io/#razaghimahdi/Compose-Loading-Dots)
 
-## Step1. Add it in your root build.gradle at the end of repositories:
+### Step 1. Add it in your project-level `build.gradle` or `settings.gradle` file:
 
 	allprojects {
 		repositories {
@@ -16,13 +16,13 @@ A library which allows you to have some beautiful loading with dots by **Jetpack
 		}
 	}
 
-## Step 2. Add the dependency
+### Step 2. Add the dependency
 
 	dependencies {
 	        implementation 'com.github.razaghimahdi:Compose-Loading-Dots:1.2.3'
 	} 
 
-## Step 3. How to use
+### Step 3. How to use
 
 ```kotlin
 val rememberDotsLoadingWavyController = rememberDotsLoadingController()
@@ -46,7 +46,7 @@ LoadingDancing(controller = rememberLoadingDancingController)
 LoadingCircleFady(controller = rememberLoadingCircleFadyController)
 ```
 
-## Step 4. How to initial
+### Step 4. How to initial
 
 ```kotlin
 val rememberDotsLoadingWavyController = rememberDotsLoadingController()
@@ -71,10 +71,7 @@ rememberDotsLoadingWavyController.updateSelectedEasing(LinearEasing)
 rememberDotsLoadingWavyController.updateSelectedDotsColor(Color.Red)
 rememberDotsLoadingWavyController.updateSelectedDotsSize(25.dp)
 
-LoadingWavy(
-    controller = rememberDotsLoadingWavyController,
-    modifier = Modifier.padding(vertical = 8.dp)
-)
+LoadingWavy(controller = rememberDotsLoadingWavyController)
 ```
 
 https://user-images.githubusercontent.com/61207818/215316569-fdb16d2f-1f49-4c37-a3af-d940cdf2cd1b.mp4
