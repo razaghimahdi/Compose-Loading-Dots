@@ -4,6 +4,8 @@ A library which allows you to have some beautiful loading with dots by **Jetpack
 
 > If you need this in XML then try [Android-Loading-Dots](https://github.com/razaghimahdi/Android-Loading-Dots).
 
+## Give a Star! ⭐
+If you like or are using this project to learn or start your solution, please give it a star. Thanks!
 
 [![Compose Loading Dots](https://jitpack.io/v/razaghimahdi/Compose-Loading-Dots.svg)](https://jitpack.io/#razaghimahdi/Compose-Loading-Dots)
 
